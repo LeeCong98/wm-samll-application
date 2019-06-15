@@ -1,0 +1,32 @@
+.container {
+  height: 60rpx;
+  display: inline-flex;
+  flex-direction: row;
+   padding-left: 25rpx;
+}
+.issue-container {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+}
+.index {
+  font-size: 60rpx;
+  line-height: 60rpx;
+  font-weight: 600;
+  margin-right: 14rpx;
+}
+.plain {
+  font-size: 32rpx;
+}
+.wire {
+  height: 44rpx;
+  margin-right: 14rpx;
+  margin-bottom: 2rpx;
+  border-left: 1px solid  black;
+}
+.time-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rpx;
+  font-size: 22rpx;
+}

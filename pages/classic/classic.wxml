@@ -1,0 +1,25 @@
+<view class="classic-container">
+  <view class="header">
+    <episode-cmp class="episoide" index="{{ classicData.index }}"  />
+    <like-cmp bind:changeLike="onLike" class="like" like="{{ like_status }}" count="{{ fav_nums }}"  />
+  </view>
+  <movie-cmp 
+    image="{{ classicData.image }}"
+    content="{{ classicData.content }}"
+    hidden="{{ classicData.type !== 100  }}"
+     />
+  <music-cmp 
+    image="{{ classicData.image }}"
+    content="{{ classicData.content }}"
+    wx:if="{{ classicData.type === 200 }}"
+    audioSrc="{{ classicData.url }}"
+   />
+   <essay-cmp
+    image="{{ classicData.image }}" 
+    content="{{ classicData.content }}"
+    hidden="{{ classicData.type !== 300 }}"
+  />
+  <navi-cmp class="navi" bind:navLeft="onNext" bind:navRight="onPrevious" title="{{ classicData.title }}" latest="{{ latest }}" first="{{ first }}" />
+
+
+</view>
