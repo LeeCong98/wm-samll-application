@@ -37,7 +37,6 @@ Component({
       this.triggerEvent('changeLike', { behavior: behavior, type: 100, art_id: this.fn }, { bubbles: false })
     },
     fn () {
-
     }
   }
 })

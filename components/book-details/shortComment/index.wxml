@@ -1,0 +1,33 @@
+<view>
+  <view hidden='{{ isWrite }}' class="shot-container">
+    <input type="text" placeholder="请写下你的短评~" 
+      placeholder-class="iconText" 
+      disabled 
+      bindtap="writeContainer"  />
+    <image 
+      src="images/书单-详情-写短评@2x.png"
+       class="importIcon" 
+       wx:if="{{ flag }}" />
+    <view class="right">
+      <slot  />
+     </view>
+  </view>
+  <write-cmp style="{{ stylus.backShow(isWrite) }}" 
+            comments="{{ bookIntro.comments }}" 
+            import-class="ImportClass"
+            bind:closewritesill="closeWriteSill"
+            bindupdateData="updateData" />
+  <mask-cmp style="{{ stylus.backShow(isWrite) }}" />
+</view>
+<wxs module="stylus">
+  var backShow = function (flag) {
+    if (flag) {
+      return 'display: flex;'
+    } else {
+      return 'display: none;'
+    }
+  }
+  module.exports = { 
+    backShow: backShow
+   }
+</wxs>

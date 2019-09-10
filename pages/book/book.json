@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "book-cmp": "/components/book/index"
+    "book-cmp": "/components/book/index",
+    "search-cmp": "/components/search/index",
+    "seek-cmp": "/components/seek/index"
   }
 }

@@ -6,10 +6,10 @@ Component({
   properties: {
 
   },
-  // 外部的class
-  mutipleSlots: {
-
+  options: {
+    mutipleSlots: true
   },
+  // 外部的class
   externalClass: [],
   /**
    * 组件的初始数据

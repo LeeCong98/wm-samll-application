@@ -2,6 +2,13 @@
   <view class="header">
     <episode-cmp class="episoide" index="{{ classicData.index }}"  />
     <like-cmp bind:changeLike="onLike" class="like" like="{{ like_status }}" count="{{ fav_nums }}"  />
+    <button
+      class="share"
+      open-type="share"
+      form-type="rest"
+    >
+      <image src="/images/icon/share.png" />
+    </button>
   </view>
   <movie-cmp 
     image="{{ classicData.image }}"

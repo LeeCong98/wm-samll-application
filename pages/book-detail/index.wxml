@@ -1,2 +1,42 @@
-<!--pages/book-detail/index.wxml-->
-<text>pages/book-detail/index.wxml</text>
+<wxs src="./../../util/filters.wxs" module="filters" />
+  <view class="detail-container">
+    <view class="head">
+      <image src="{{ bookDetail.image }}" />
+      <text class="detail-name">{{ bookDetail.title }}</text>
+      <text class="author">{{ bookDetail.author }}</text>
+    </view>
+    <core-cmp titleText="短评" class="comments" >
+      <view class="comment-item" wx:if="{{ bookComment.comments.length }}">
+        <block wx:for="{{ filters.subComment(bookComment.comments, 15) }}" wx:key="{{ index }}">
+          <view
+            class="{{ ['com', index === 0 ? 'com-one': null, index === 1 ? 'com-two': null , index === 2  ? 'com-three' : null ] }}">
+            <text>{{ item.content }}</text>
+            <text>+{{ item.nums }}</text>
+          </view>
+        </block>
+      </view>
+      <view wx:else class="empty-prompt">暂时无短评</view>
+    </core-cmp>
+    <core-cmp titleText="内容简介" class="intro">
+      <text class="inner"> 
+        {{ bookDetail.summary ? filters.format(bookDetail.summary) : null  }}
+      </text> 
+    </core-cmp>
+    <core-cmp titleText="书本信息" >
+      <view class="info" >
+        <view class="text_prev">
+          <text>出版社:  {{ bookDetail.publisher }}</text>
+          <text>出版年:  {{ bookDetail.pubdate }}</text>
+        </view>
+        <text>出版号： {{ bookDetail.isbn }} </text>
+        <text>页数:  {{ bookDetail.pages }} </text>
+        <text>定价:  {{ bookDetail.price }}</text>
+        <text>装配： {{ bookDetail.binding }}</text>
+        <text>书名： {{ bookDetail.title }}</text>
+        <text>译者： {{ bookDetail.translator.length ? bookDetail.translator : '无' }}</text>
+      </view>
+    </core-cmp>
+  <short-comments bindupdate="update" likeInfo="{{ likeInfo }}" hidden="true" bookIntro="{{ { book_id: likeInfo.id , comments: filters.subComment(bookComment.comments, 3)} }}">
+    <like-cmp bindchangeLike="changeLikeStatus" like="{{ likeInfo.likestatus }}" count="{{ likeInfo.fav_nums }}" />
+  </short-comments>
+</view>

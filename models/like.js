@@ -17,6 +17,12 @@ class Like extends HTTP {
             duration: 700,
             icon: 'none'
           })
+        } else {
+          wx.showToast({
+            title: behavior === 'like' ? '点赞成功' : '取消点赞成功',
+            duration: 700,
+            icon: 'none'
+          })
         }
       }
     })

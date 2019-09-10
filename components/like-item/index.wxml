@@ -1,0 +1,12 @@
+<view class="like-item">
+  <view class="top">
+    <text class="com tag">喜欢</text>
+    <like-cmp bind:changeLike="onLike" like="{{ likeItem.like_status }}" count="{{ likeItem.fav_nums }}"  />
+  </view>
+  <view class="product-image">
+    <image src="{{ likeItem.image }}" />
+  </view>
+  <view class="description">
+    <text >{{ likeItem.content }}</text>
+  </view>
+</view>

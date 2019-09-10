@@ -1,0 +1,18 @@
+var format = function (text) {
+  if (typeof text === 'string') {
+    var Reg = getRegExp('\\\\n', 'g')
+    text = text.replace(Reg, '\n')
+  }
+  return text
+}
+var subArr = function (arr , len) {
+  if (!arr && typeof len === 'number') {
+    return false
+  }
+  return arr.slice(0, len)
+}
+
+module.exports = {
+  format: format,
+  subComment: subArr
+}

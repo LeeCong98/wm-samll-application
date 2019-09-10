@@ -33,8 +33,7 @@
 .author{
   font-size:20rpx;
   color:#999999;
-  margin-top:-5rpx;
-  margin-bottom: 10rpx;
+  margin-top:5rpx;
   text-overflow:ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -55,5 +54,11 @@
 }
 
 .footer{
-  color:#666666;
+  color:#666;
+}
+.like {
+  color: orange;
+  margin-right: 10rpx;
+  font-size: 20rpx;
+  text-align: right;
 }

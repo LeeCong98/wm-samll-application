@@ -11,7 +11,8 @@
     "navigationStyle": "default",
     "backgroundColor": "#fffffff",
     "enablePullDownRefresh": false,
-    "backgroundTextStyle": "light"
+    "backgroundTextStyle": "light",
+    "onReachBottomDistance": 40
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
@@ -39,5 +40,6 @@
         "text": "喜欢"
       }
     ]
-  }
+  },
+  "requiredBackgroundModes": ["audio"]
 }

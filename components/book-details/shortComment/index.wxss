@@ -1,0 +1,39 @@
+.shot-container {
+  height: 120rpx;
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  background-color: white;
+  text-align: left;
+  border: 2rpx solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rpx 30rpx;
+  box-sizing: border-box;
+}
+.ImportClass {
+  width: 410rpx;
+  height: 60rpx;
+  border: 1px solid black;
+  border-radius: 30rpx;
+  padding-left: 20rpx;
+  font-size: 18rpx;
+  margin-bottom: 5rpx;
+}
+.shot-container .importIcon {
+  position: absolute;
+  display: block;
+  left: 70rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25rpx;
+  height: 25rpx;
+}
+.iconText {
+  text-indent: 80rpx;
+  font-size: 28rpx;
+}
+.shot-container .right {
+  margin-top: -15rpx;
+}

@@ -1,0 +1,43 @@
+<!--components/search/search-cmp.wxml-->
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="header">
+    <view class="search-container">
+      <image class="icon" src="images/search.png" />
+      <input placeholder-class='in-bar'  placeholder='书籍名' class='bar' bind:confirm="onConfirm" value="{{ query }}" auto-focus="true" />
+      <image style="{{ {display: finished ? 'none': 'block'} }}" bindtap="backSearchBar" class="cancel-img" src="images/cancel.png" />
+    </view>
+    <view class='cancel' bind:tap="onCancel">取消</view>
+  </view>
+  <!-- 搜索panel -->
+  <view wx:if="{{!finished}}">
+    <view class="history">
+      <view class="title">
+        <view class="chunk"></view>
+        <text>历史搜索</text>
+      </view>
+      <view class="tags">
+        <block wx:for="{{ historys }}"  wx:key="{{ item }}">
+          <text class="com" data-key="{{ item }}" bindtap="tapHistoryKeyword"> {{item}}</text>
+        </block>
+      </view>
+    </view>
+    <view class="history hot-search">
+      <view class="title">
+        <view class="chunk"></view>
+        <text>热门搜索</text>
+      </view>
+      <view class="tags">
+        <block wx:for="{{ hots }}"  wx:key="{{ item }}">
+          <text class="com"  bindtap="tapHotKeyword" data-key="{{ item }}"> {{item}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- search 内容渲染 -->
+  <view class="books-container" wx:if="{{finished}}">
+    <block wx:for="{{ searchList }}" wx:key="{{ item.id }}">
+      <book-cmp bindtap="toDetail" data-id="{{ item.id }}"  bookItem="{{ item }}" bind:likebook="{{ likebook }}" />
+    </block> 
+  </view>
+</view>

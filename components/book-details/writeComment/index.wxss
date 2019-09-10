@@ -1,0 +1,68 @@
+.wirte-container {
+  height: 330rpx;
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  background-color: white;
+  text-align: left;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rpx 30rpx;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.handler-container {
+  overflow: hidden;
+  font-size: 34rpx;
+  display: flex;
+  height: 110rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.handler-container text:first-child {
+  color: #c2c3c4;
+}
+.handler-container text:last-child {
+  color: black;
+}
+.comment-item {
+  display: flex;
+  flex-wrap: wrap;
+  height: 123rpx;
+  align-items: center;
+}
+.comment-item .com {
+  font-size: 24rpx;
+  margin-right: 30rpx;
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  padding: 0px 25rpx;
+  line-height: 55rpx;
+  height: 55rpx;
+}
+
+.com text {
+  padding-left: 20rpx;
+  color: #c2c3c4;
+}
+.comment-item .highlight text {
+  color: orange;
+}
+.comment-item .com-one {
+  background: #fffadd;
+}
+.comment-item .com-two {
+  background: #eefaff;
+}
+.comment-item .com-three {
+  background: #f1f6f0;
+}
+/* 输入文本框样式 */
+ .wirte-container .writecom {
+  height: 68rpx;
+  border: none;
+  background-color: #f5f5f5;
+  width: 100%;
+  color: 28rpx;
+  font-size: 28rpx;
+}

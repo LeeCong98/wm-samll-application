@@ -1,2 +1,42 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="user-container">
+  <image src="/images/user/my@bg.png" class="bg" />
+  <view class="header">
+    <view class="avatar">
+      <image 
+        src="{{ userInfo.avatarUrl }}" 
+        class="avatar-img"  
+        style="background-color: {{ userInfo.avatarUrl ? 'transparent': '#f5f5f5 '  }}" />
+      <button
+        wx:if="{{ !isDelegate }}" 
+        hidden="" 
+        open-type="getUserInfo" 
+        bindgetuserinfo="delegateUser" 
+        lang="zh_CN"
+        size="mini"
+        class="authorization"
+        type="primary"
+        >
+        获取个人账号
+      </button>
+      <text wx:if="{{ isDelegate }}" class="user-name">{{ userInfo.nickName }}</text>
+    </view>
+    <view class="menu-group">
+      <view class="menu-left">
+        <image src="/images/user/about.png" />
+        <text>关于我们</text>
+      </view>
+      <view class="menu-right">
+        <text>{{ likeBookNumber }}</text>
+        <text>我的书单</text>
+      </view>
+    </view>
+  </view> 
+  <view class="title">
+    <text>喜欢</text>
+  </view>
+  <view class="{{ ['user-like', classicItem.length%2 !== 0 ? 'single' : ''] }}">
+    <block wx:for="{{ classicItem }}" wx:key="{{ item.id }}">
+      <like-item data-index="{{ index }}" bind:removeItem="removeItem" likeItem="{{ item }}" />
+    </block>
+  </view>
+</view>

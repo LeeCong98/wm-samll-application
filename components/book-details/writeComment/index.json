@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "core-cmp": "/components/core/index"
+  }
+}

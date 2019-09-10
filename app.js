@@ -1,5 +1,6 @@
 App({
-  onLaunch: function () {
-    
+  onLaunch: function (event) {
+  },
+  onShow (event) {
   }
 })

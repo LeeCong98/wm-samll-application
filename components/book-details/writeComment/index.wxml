@@ -1,0 +1,42 @@
+<view class="wirte-container">
+  <view class="handler-container">
+    <text bindtap="closeSill">取消</text>
+    <text bindtap="closeSill">确认</text>
+  </view>
+  <view class="comment-item">
+    <block wx:for="{{ comments }}" wx:key="{{ index }}">
+      <view bind:tap="{{ discuss.texthigh }}" 
+        class="{{ discuss.rank(index, highIndex) }}"
+        data-where="{{ index }}"
+      >
+        <text >{{ item.content }}</text>
+      </view>
+    </block>
+  </view>
+  <input class="import-class writecom" placeholder="请输入你的短评,最多可12个字" bindblur="getTyping" value="{{ typingVal }}"/> 
+</view>
+
+<wxs module="discuss">
+  var texthigh = function (event, ownerInstance) {
+    var offset = event.currentTarget.dataset['where']
+    var items = ownerInstance.selectAllComponents('.com')
+    ownerInstance.callMethod('selectHot',{ offset: offset })
+    return false
+  }
+  var rank = function (index, highIndex) {
+    var native = ['com']
+     index === parseInt(highIndex) ? native.push('highlight') : null
+     if (index === 0) {
+       native.push('com-one')
+     } else if (index === 1) {
+       native.push('com-two')
+     } else {
+       native.push('com-three')
+     }
+     return native
+  }
+  module.exports = { 
+    texthigh: texthigh,
+    rank: rank
+   }
+</wxs>

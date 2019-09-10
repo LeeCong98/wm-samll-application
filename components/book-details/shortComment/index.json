@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "like-cmp": "/components/like/index",
+    "write-cmp": "/components/book-details/writeComment/index",
+    "mask-cmp": "/components/mask/index"
+  }
+}

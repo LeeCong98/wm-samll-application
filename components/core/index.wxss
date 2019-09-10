@@ -1,0 +1,10 @@
+.core-container {
+  background-color: white;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 25rpx;
+}
+.core-container .title {
+  font-size: 30rpx;
+  font-weight: 700;
+}

@@ -63,7 +63,7 @@
   </view>
   <view class="comment-container">
     <block wx:for="{{util.limit(comments, 3)}}">
-      <tag-cmp bind:tapping="onPost" tag-class="tag" text="{{item.content}}">
+      <tag-cmp bind: bind:tapping="onPost" tag-class="tag" text="{{item.content}}">
         <text class="num" slot="after">{{'+' + item.nums}}</text>
       </tag-cmp>
     </block>

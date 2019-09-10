@@ -3,7 +3,6 @@ class classicModel extends HTTP {
   constructor() {
     super()
   }
-
   getLatest (success) {
     this.request({
       url: 'classic/latest',
@@ -17,7 +16,6 @@ class classicModel extends HTTP {
       }
     })
   }
-
   // 上一期的数据
   getPreviousOrNext (callback, index, nextOrPrvious) {
     // ## 确认缓存数据，并进行数据复用

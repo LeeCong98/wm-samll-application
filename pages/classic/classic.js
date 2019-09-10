@@ -4,7 +4,6 @@ import Like from '../../models/like.js'
 let classic_model = new classicModel()
 let like = new Like()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -52,13 +51,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    classic_model.getLatest((rsp) => {
-      this.setData({
-        classicData: rsp.data,
-        like_status: rsp.data.like_status,
-        fav_nums: rsp.data.fav_nums
-      })
-    })
+
   },
 
   /**
@@ -72,7 +65,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    classic_model.getLatest((rsp) => {
+      this.setData({
+        classicData: rsp.data,
+        like_status: rsp.data.like_status,
+        fav_nums: rsp.data.fav_nums
+      })
+    })
   },
 
   /**
@@ -106,7 +105,18 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (event) {
+    // 用户分享功能，首先需要设置showShareMenu的withShareMenu为true，以获得分享的数据
+    wx.showShareMenu({
+      withShareTicket: true,
+      success (event) {
+        // 如果没有转发，那么这里的withShareTicke为空
+        console.log(event)
+      }
+    })
+    return {
+      title: 'testing',
+      path: '/page/classic/classic'
+    }
   }
 })

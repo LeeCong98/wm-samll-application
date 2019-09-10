@@ -1,4 +1,8 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "core-cmp": "/components/core/index",
+    "short-comments": "/components/book-details/shortComment/index",
+    "like-cmp": "/components/like/index"
+  }
 }

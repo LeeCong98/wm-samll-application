@@ -1,0 +1,4 @@
+<view class="core-container">
+  <text class="title">{{  titleText }}</text>
+  <slot />
+</view>

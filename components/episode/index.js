@@ -6,7 +6,7 @@ Component({
   properties: {
     index: {
       type: Number,
-      default: 0,
+      value: 0,
       observer (newVal, oldVal, changePath) {
         let useVal = newVal < 10 ? '0' + newVal : newVal 
         this.setData({
